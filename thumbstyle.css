@@ -1,0 +1,78 @@
+@import url(http://fonts.googleapis.com/css?family=Allan);
+/*basic reset*/
+* {margin: 0; padding: 0;}
+/*forcing the body to take 100% height*/
+html, body {min-height: 100%;}
+/*a nice BG*/
+body {
+	background: #360; /*fallback*/
+	background: linear-gradient( #09C, red);
+}
+h1 {font-family:Allan; text-align:center; font-size:60px; color:#FFF; margin:20px; text-shadow:1px 1px #333;}
+.container {width:100%; margin:30px auto 30px 30px;}
+/*Thumbnail Background*/
+.thumb {
+	width: 200px; height: 200px; margin:30px;
+	perspective: 1000px; -webkit-perspective:1000px; float:left;
+}
+.thumb a {
+	display: block; width: 100%; height: 100%;
+	transform-style: preserve-3d; -ms-transform-style:preserve-3d; -moz-transform-style: preserve-3d; -webkit-transform-style: preserve-3d; -o-transform-style: preserve-3d;
+    -webkit-transition:all .50s;	-moz-transition:all .50s;	-o-transition:all .50s; transition:all .50s;
+}
+.thumb:hover a {transform: rotateX(80deg); -webkit-transform:rotateX(80deg); -ms-transform:rotateX(80deg); -moz-transform:rotateX(80deg); -o-transform:rotateX(80deg); transform-origin: bottom; -webkit-transform-origin:bottom;}
+/*bottom surface */
+.thumb a:after {
+	/*36px high element positioned at the bottom of the image*/
+	content: ''; position: absolute; left: 0; bottom: 0; 
+	width: 100%; height: 36px;
+	/*inherit the main BG*/
+	background: rgba(0,0,0,0.8); background-size: cover, cover;
+	/*draw the BG bottom up*/
+	background-position: bottom;
+	/*rotate the surface 90deg on the bottom axis*/
+	transform: rotateX(90deg); -webkit-transform:rotateX(90deg); -ms-transform:rotateX(90deg); -moz-transform:rotateX(90deg); -o-transform:rotateX(90deg); transform-origin: bottom;-webkit-transform-origin:bottom;
+}
+/*label style*/
+.thumb a span {
+	color: #fff; text-transform: uppercase;
+	position: absolute; top: 100%; left: 0; width: 100%;
+	font: 22px Allan; text-align: center; padding-top:5px;
+	/*the rotation is a bit less than the bottom surface to avoid flickering*/
+	transform: rotateX(-89.99deg);  -webkit-transform:rotateX(-89.99deg); -ms-transform:rotateX(-89.99deg); -moz-transform:rotateX(-89.99deg); -o-transform:rotateX(-89.99deg);transform-origin: top;-webkit-transform-origin:top;
+	z-index: 1;
+}
+/*shadow*/
+.thumb a:before {
+	content: ''; position: absolute; top: 0; left: 0;
+	width: 100%; height: 100%;
+	background: rgba(0, 0, 0, 0.5); 
+	box-shadow: 0 0 100px 50px rgba(0, 0, 0, 0.6);
+	transition: all 0.5s; 
+	/*by default the shadow will be almost flat, very transparent, scaled down with a large blur*/
+	opacity: 0.15;
+	transform: rotateX(95deg) translateZ(-80px) scale(0.75);  -webkit-transform: rotateX(95deg) translateZ(-80px) scale(0.75); -ms-transform: rotateX(95deg) translateZ(-80px) scale(0.75); -moz-transform: rotateX(95deg) translateZ(-80px) scale(0.75); -o-transform: rotateX(95deg) translateZ(-80px) scale(0.75);
+	transform-origin: bottom;-webkit-transform-origin:bottom;
+}
+.thumb:hover a:before {
+	opacity: 1;
+	/*blurred effect using box shadow as filter: blur is not supported in all browsers*/
+	box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.5);
+	/*pushing the shadow down and scaling it down to size*/
+	transform: rotateX(0) translateZ(-60px) scale(0.85); -webkit-transform: rotateX(0) translateZ(-60px) scale(0.85); -ms-transform: rotateX(0) translateZ(-60px) scale(0.85); -moz-transform: rotateX(0) translateZ(-60px) scale(0.85); -o-transform: rotateX(0) translateZ(-60px) scale(0.85); 
+}
+
+.thumb a.image1 {background: url(pp.png) center; background-size:cover;}
+.thumb a.image2 {background: url(http://d13yacurqjgara.cloudfront.net/users/33320/screenshots/482481/3d_face.jpg) center; background-size:cover;}
+.thumb a.image3 {background: url(http://d13yacurqjgara.cloudfront.net/users/33320/screenshots/951112/cartman.png) center; background-size:cover;}
+.thumb a.image4 {background: url(http://d13yacurqjgara.cloudfront.net/users/4467/screenshots/661196/sasquatch-troop-full.jpg) center; background-size:cover;}
+.thumb a.image5 {background: url(http://d13yacurqjgara.cloudfront.net/users/40016/screenshots/1358207/bats_1x.png) center; background-size:cover;}
+.thumb a.image6 {background: url(http://d13yacurqjgara.cloudfront.net/users/4467/screenshots/304344/tony-the-tiger.jpg) center; background-size:cover;}
+.thumb a.image7 {background: url(http://d13yacurqjgara.cloudfront.net/users/10562/screenshots/258839/the_flintstones_dribble.jpg) center; background-size:cover;}
+.thumb a.image8 {background: url(http://d13yacurqjgara.cloudfront.net/users/113424/screenshots/709032/dr1.png) center; background-size:cover;}
+.thumb a.image9 {background: url(http://d13yacurqjgara.cloudfront.net/users/35950/screenshots/1143200/redhead_1x.jpg) center; background-size:cover;}
+.thumb a.image10 {background: url(http://d13yacurqjgara.cloudfront.net/users/4767/screenshots/137253/shot_1301072406.png) center; background-size:cover;}
+.thumb a.image11 {background: url(http://d13yacurqjgara.cloudfront.net/users/4767/screenshots/1090838/warrior_1x.png) center; background-size:cover;}
+.thumb a.image12 {background: url(http://d13yacurqjgara.cloudfront.net/users/4767/screenshots/454459/dragon.png) center; background-size:cover;}
+.thumb a.image13 {background: url(http://d13yacurqjgara.cloudfront.net/users/67884/screenshots/1117880/ahhhh_monster__1x.jpg) center; background-size:cover;}
+.thumb a.image14 {background: url(http://d13yacurqjgara.cloudfront.net/users/2404/screenshots/24018/shot_1275616378.jpg) center; background-size:cover;}
