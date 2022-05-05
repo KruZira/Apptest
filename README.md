@@ -11,14 +11,13 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
-
 import wolframalpha
+from api import wolframalpha_id
 
 
-# quest = input("Question: ")
+quest = input("Question: ")
 
-app_id = "A7TH23-4H9PJWAL94"       # Our id From The website
+app_id = wolframalpha_id      # Our id From The website
 client = wolframalpha.client(app_id)   #  Comfirming our app_id
 
 res = client.query(quest)      # To search online
