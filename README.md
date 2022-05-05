@@ -40,7 +40,7 @@ print(a)    #  print our result together as a text
 
 **Bold** and _Italic_ and `Code` text
 
-[Link](https://www.linkedin.com/in/odili-kruz-259733202) and ![Image](src)
+[Link](https://www.linkedin.com/in/odili-kruz-259733202) and ![Image](https://file2directlink.herokuapp.com/21076659482810179613686460/AgADprgx/photo_2022-05-05_18-12-30_.jpg)
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
