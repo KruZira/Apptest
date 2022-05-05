@@ -16,7 +16,7 @@ Syntax highlighted code block
 import wolframalpha
 
 
-quest = input("Question: ")
+# quest = input("Question: ")
 
 app_id = "A7TH23-4H9PJWAL94"       # Our id From The website
 client = wolframalpha.client(app_id)   #  Comfirming our app_id
